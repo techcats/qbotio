@@ -30,6 +30,7 @@ $ gulp serve
 > It is a good idea to merge your changes to 'dev' branch before deployment
 
 ```bash
+$ gulp # compiles sources into dist/
 $ gulp deploy
 ```
 
