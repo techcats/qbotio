@@ -47,7 +47,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('deploy', function() {
-  return gulp.src('./dist/**/*')
+  return gulp.src(['./dist/**/*', './dev/CNAME', './dev/README.md'])
     .pipe(ghPages({
         branch: 'master'
     }));
