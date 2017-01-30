@@ -1,0 +1,14 @@
+{
+  "name": "q-bot-io",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "angular-animate": "1.3.16",
+    "angular-cookies": "1.3.16",
+    "angular-resource": "1.3.16",
+    "angular-route": "1.3.16",
+    "angular-sanitize": "1.3.16",
+    "angular-touch": "1.3.16",
+    "angular": "1.3.16"
+  }
+}
