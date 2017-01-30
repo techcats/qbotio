@@ -1,3 +1,4 @@
 node_modules
+dist
 dev/bower_components
 .tmp
