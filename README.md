@@ -22,7 +22,7 @@ $ npm install
 > Serves the app on localhost:8080 for local testing
 
 ```bash
-$ gulp serve
+$ gulp serve-dev
 ```
 
 ### Deployment:
