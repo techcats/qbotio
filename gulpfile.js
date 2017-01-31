@@ -34,10 +34,10 @@ gulp.task('reload', function () {
 gulp.task('connect', function (done) {
   connect.server({
     root: 'dev',
-    port: 80,
+    port: 8080,
     livereload: true
   });
-  opn('http://localhost:80', done);
+  opn('http://localhost:8080', done);
 });
 
 gulp.task('watch', function () {
