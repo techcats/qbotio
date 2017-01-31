@@ -19,7 +19,7 @@ $ npm install
 
 ### Test Locally
 
-> Serves the app on localhost:80 for local testing
+> Serves the app on localhost:8080 for local testing
 
 ```bash
 $ gulp serve
