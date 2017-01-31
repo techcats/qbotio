@@ -6,36 +6,49 @@
         <meta name="viewport" content="width=device-width">
         <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
         <!-- build:css styles/styles.css -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
     </head>
     <body ng-app="QBotIO" ng-controller="QBotIOCtrl">
-            
-            <header>
-                <h1 class="animate">Q-Bot IO</h1>
-                <p class="animate">An IR Closed-Domain Answering System that generates relevant and accurate answers to Computer Science Interview questions.</p>
-            </header>
-            <main class="animate">
-                
-            </main>
-            <footer class="animate">
-                <hr>
-                <p>Techcats</p>
-            </footer>
-            
-            <div class="forkme">
-                <a href="https://github.com/https://github.com/techcats/q-bot-io">Fork me on Github</a>
+        <header>
+            <h1 class="animate">Q-Bot IO</h1>
+            <p class="animate">Enter a Computer Science Interview Question below</p>
+        </header>
+        <div style="padding-top: 20px; padding-bottom: 20px" class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3"></div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="What is polymorphism?">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" ng-click="getResults()" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3"></div>
             </div>
+        </div>
+        <div class="container-fluid">
+            <div ng-view></div>
+        </div>
+        <!-- <footer class="animate">
+            <hr>
+            <p>Techcats</p>
+        </footer> -->
 
-            <!-- build:js scripts/scripts.js -->
-            <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-            <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
-            <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.min.js"></script>
-            <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
-            <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
-            <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-            <script type="text/javascript" src="bower_components/angular-touch/angular-touch.min.js"></script>
-            <script type="text/javascript" src="scripts/app.js"></script>
-            <!-- endbuild -->
+        <!-- build:js scripts/scripts.js -->
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-touch/angular-touch.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/controllers/results.js"></script>
+        <!-- endbuild -->
     </body>
 </html>
