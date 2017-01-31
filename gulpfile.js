@@ -2,27 +2,26 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     useref = require('gulp-useref'),
-    gulpif = require('gulp-if'),
-    autoprefixer = require('gulp-autoprefixer'),
+    gulpIf = require('gulp-if'),
     uglify = require('gulp-uglify'),
-    minifyCss = require('gulp-minify-css'),
+    minifyCss = require('gulp-cssnano'),
     connect = require('gulp-connect'),
     opn = require('opn'),
     htmlmin = require('gulp-htmlmin'),
+    clean = require('gulp-clean'),
     ghPages = require('gulp-gh-pages');
 
 
-gulp.task('html', function () {
-    var assets = useref.assets();
+gulp.task('clean', function() {
+    return gulp.src('dist/', {read: false}).pipe(clean());
+});
 
+gulp.task('build', ['clean'], function () {
     return gulp.src('dev/*.html')
         .pipe(useref())
-        //.pipe(gulpif('*.js', uglify()))
-        // .pipe(gulpif('*.css', autoprefixer({
-        //     browsers: ['last 2 versions', 'ie 8', 'ie 9']
-        // })))
-        .pipe(gulpif('*.css', minifyCss()))
-        // .pipe(gulpif('*.html', htmlmin({collapseWhitespace: true})))
+        .pipe(gulpIf('*.js', uglify()))
+        .pipe(gulpIf('*.css', minifyCss()))
+        .pipe(gulpIf('*.html', htmlmin({collapseWhitespace: true})))
         .pipe(gulp.dest('./dist'));
 });
 
@@ -52,4 +51,4 @@ gulp.task('deploy', function() {
 });
 
 gulp.task('serve', ['connect', 'watch']);
-gulp.task('default', ['html']);
+gulp.task('default', ['build']);
