@@ -1,4 +1,5 @@
-angular.module('QBotIO').controller('SearchController', function ($scope) {
+app.controller('SearchController', ['globals', '$scope', function (globals, $scope) {
+    console.log(globals.BASE_URL);
     $scope.getResults = function() {
         $scope.results = [
             "Result1",
@@ -6,4 +7,4 @@ angular.module('QBotIO').controller('SearchController', function ($scope) {
             "Result3"
         ];
     };
-});
+}]);

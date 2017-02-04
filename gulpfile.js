@@ -20,11 +20,7 @@ gulp.task('clean', function() {
 gulp.task('build', ['clean'], function (cb) {
     return gulp.src('dev/**/*.html')
         .pipe(useref())
-        .pipe(gulpIf('*.js', preprocess({
-            context: {
-                NODE_ENV: 'production'
-            }
-        })))
+        .pipe(gulpIf('*.js', preprocess({context: {NODE_ENV: 'production'}})))
         .pipe(gulpIf('*.js', ngAnnotate()))
         .pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', minifyCss()))
@@ -71,6 +67,7 @@ gulp.task('watch-prod', function () {
 gulp.task('deploy', function() {
   return gulp.src(['./dist/**/*', './dev/CNAME', './dev/README.md'])
     .pipe(ghPages({
+        remoteUrl: 'https://github.com/techcats/qbotio.github.io.git',
         branch: 'master'
     }));
 });

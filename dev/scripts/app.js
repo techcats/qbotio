@@ -1,10 +1,7 @@
-angular.module('QBotIO', ['ngAnimate','ngCookies','ngResource','ngRoute','ngSanitize','ngTouch', 'ui.bootstrap'])
-.const({
-    /* @if NODE_ENV='production' **
-    BASE_URL : 'http://www.qbotio.com:8080/'
-    /* @endif */
-    //@exclude
-    BASE_URL : 'http://localhost:8080/'
+var app = angular.module('QBotIO', ['ngAnimate','ngCookies','ngResource','ngRoute','ngSanitize','ngTouch', 'ui.bootstrap'])
+.constant('globals', {
+    /* @if NODE_ENV='production' ** BASE_URL : 'http://www.qbotio.com:8000/', /* @endif */ //@exclude
+    BASE_URL : 'http://localhost:8000/'
     //@endexclude
 })
 .config(function($routeProvider, $locationProvider) {
