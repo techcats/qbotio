@@ -9,4 +9,4 @@ $ git clone https://github.com/techcats/qbotio.github.io.git
 $ git checkout dev
 ```
 
-See development guide: https://github.com/techcats/qbotio/tree/dev
+See development guide: https://github.com/techcats/qbotio.github.io/tree/dev

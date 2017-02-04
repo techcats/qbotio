@@ -1,8 +1,10 @@
 # Q-Bot IO
 
-[![Stories in Ready](https://badge.waffle.io/techcats/qbotio.png?label=ready&title=Ready)](https://waffle.io/techcats/qbotio)
+[![Stories in Ready](https://badge.waffle.io/techcats/qbotio.github.io.png?label=ready&title=Ready)](https://waffle.io/techcats/qbotio.github.io)
 
 An IR Closed-Domain Answering System that generates relevant and accurate answers to Computer Science Interview questions.
+
+> For back end development visit: https://github.com/techcats/qbotio-back-end
 
 ## Development
 
