@@ -1,10 +1,10 @@
-app.controller('SearchController', ['globals', '$scope', function (globals, $scope) {
-    console.log(globals.BASE_URL);
+app.controller('SearchController', ['globals', '$scope', '$http', function (globals, $scope, $http) {
     $scope.getResults = function() {
-        $scope.results = [
-            "Result1",
-            "Result2",
-            "Result3"
-        ];
+        $http({
+            method: 'GET',
+            url: globals.BASE_URL + 'search'
+        }).then(function (response) {
+            $scope.results = response.data;
+        });
     };
 }]);
