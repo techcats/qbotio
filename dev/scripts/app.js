@@ -1,6 +1,6 @@
 var app = angular.module('QBotIO', ['ngAnimate','ngCookies','ngResource','ngRoute','ngSanitize','ngTouch', 'ui.bootstrap'])
 .constant('globals', {
-    /* @if NODE_ENV='production' ** BASE_URL : 'http://www.qbotio.com:8000/', /* @endif */ //@exclude
+    /* @if NODE_ENV='production' ** BASE_URL : 'http://api.qbotio.com/', /* @endif */ //@exclude
     BASE_URL : 'http://localhost:8000/'
     //@endexclude
 })
