@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
+    preprocess = require('gulp-preprocess'),
     useref = require('gulp-useref'),
     gulpIf = require('gulp-if'),
     uglify = require('gulp-uglify'),
@@ -8,17 +9,22 @@ var gulp = require('gulp'),
     ngAnnotate = require('gulp-ng-annotate')
     connect = require('gulp-connect'),
     opn = require('opn'),
-    clean = require('gulp-clean'),
+    del = require('del'),
     ghPages = require('gulp-gh-pages');
 
 
 gulp.task('clean', function() {
-    return gulp.src('dist/', {read: false}).pipe(clean());
+    return del(['dist']);
 });
 
-gulp.task('build', ['clean', 'fonts'], function (cb) {
+gulp.task('build', ['clean'], function (cb) {
     return gulp.src('dev/**/*.html')
         .pipe(useref())
+        .pipe(gulpIf('*.js', preprocess({
+            context: {
+                NODE_ENV: 'production'
+            }
+        })))
         .pipe(gulpIf('*.js', ngAnnotate()))
         .pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', minifyCss()))
@@ -26,7 +32,7 @@ gulp.task('build', ['clean', 'fonts'], function (cb) {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('fonts', function() {
+gulp.task('fonts', ['clean'], function() {
     return gulp.src(['dev/bower_components/font-awesome/fonts/fontawesome-webfont.*'])
         .pipe(gulp.dest('dist/fonts/'));
 });
@@ -71,4 +77,4 @@ gulp.task('deploy', function() {
 
 gulp.task('serve-dev', ['connect-dev', 'watch-dev']);
 gulp.task('serve-prod', ['connect-prod', 'watch-prod'])
-gulp.task('default', ['build']);
+gulp.task('default', ['build', 'fonts']);
