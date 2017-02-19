@@ -3,3 +3,4 @@ dist
 dev/bower_components
 .tmp
 .publish
+*.DS_Store
