@@ -4,7 +4,7 @@
         <div class="col-lg-6 col-md-6">
             <!-- <label for="search_input">Enter a Computer Science Interview Question below</label> -->
             <div class="input-group">
-                <input id="search_input" type="text" class="form-control" placeholder="Enter a Computer Science Interview Question" style="font-family: Helvetica Neue">
+                <input id="search_input" ng-model="query" type="text" class="form-control" placeholder="Enter a Computer Science Interview Question" style="font-family: Helvetica Neue">
                 <span class="input-group-btn">
                     <button class="btn btn-warning" ng-click="getResults()" background-color="#FFAB40" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </span>
@@ -13,9 +13,8 @@
         <div class="col-lg-3 col-md-3"></div>
     </div>
 </div>
-{{BASE_URL}}
 <div class="container-fluid">
     <div ng-repeat="result in results">
-        {{result.answer}}
+        {{result.value}}
     </div>
 </div>
