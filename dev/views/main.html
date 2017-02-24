@@ -1,14 +1,22 @@
-<div style="padding-top: 200px; padding-bottom: 20px" class="container">
+<div class="container" style="padding-top: 100px;">
     <div class="row">
         <div class="col-lg-3 col-md-3"></div>
         <div class="col-lg-6 col-md-6">
             <!-- <label for="search_input">Enter a Computer Science Interview Question below</label> -->
+            <div>
+              <img class="animate" style="margin: auto; display: block; max-width: 70%; height: auto;" src="assets/qbotio-logo.png" alt="logo" />
+            </div>
+
             <div class="input-group">
                 <input id="search_input" type="text" class="form-control" placeholder="Enter a Computer Science Interview Question" style="font-family: Helvetica Neue">
                 <span class="input-group-btn">
                     <button class="btn btn-warning" ng-click="getResults()" background-color="#FFAB40" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </span>
             </div>
+            <div class="query-results">
+            </div>
+
+
         </div>
         <div class="col-lg-3 col-md-3"></div>
     </div>

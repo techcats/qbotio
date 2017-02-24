@@ -76,35 +76,11 @@ header a:focus, main a:focus, footer a:focus {
 header a:hover, main a:hover, footer a:hover {
     color: #b7a5f5;
 }
+
 /*
  *  Added
  */
 
-.header {
-    position: absolute;
-    left: 100px;
-    top: 150px;
-}
-
-.header img {
-    float: left;
-    width: 84px;
-    height: 81px;
-    margin-left: 410px;
-  /*margin-left: 450px;*/
-
-  /*margin: 0 0 10px 10px;*/
-  /*background: #555;*/
-}
-
-.header h1 {
-  /*position: relative;*/
-    float: left;
-    top: 18px;
-    left: 10px;
-    margin-right: 15px;
-    margin-left: 25px;
-}
 
 .btn-warning {
     background: #FFAB40;
@@ -115,6 +91,19 @@ header a:hover, main a:hover, footer a:hover {
     /*font-weight: 100;*/
 }
 
+.query-results{
+  /* Rectangle 2: */
+background: #454D55;
+/* A red–black tree is: */
+font-family: DroidSansMono;
+font-size: 28px;
+color: #727272;
+line-height: 40px;
+}
+
+.input-group{
+    padding-top: 50px;
+}
 
 /*
  *  Added
@@ -205,9 +194,9 @@ h1 span {
 .animate {
     /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
     font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-weight: 500;
-    /*font-family: HelveticaNeue-Medium;*/
-    font-size: 60px;
+    /*font-weight: 500;*/
+    font-family: HelveticaNeue-Medium;
+    /*font-size: 60px;*/
     /*color: #727272;*/
     -webkit-animation-name:fadeInUp;
     -moz-animation-name:fadeInUp;
