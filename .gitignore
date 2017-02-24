@@ -3,3 +3,10 @@ dist
 dev/bower_components
 .tmp
 .publish
+*.DS_Store
+.metadata
+bin/
+.settings/
+.project
+.externalToolBuilders/
+*.launch
