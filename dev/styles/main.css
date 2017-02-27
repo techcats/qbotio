@@ -95,6 +95,24 @@ header a:hover, main a:hover, footer a:hover {
     padding-top: 50px;
 }
 
+.boxed{
+    background-color: white;
+    width: 555px;
+    border: 25px #454D55;
+    border-radius: 5px;
+}
+
+.query-results{
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 2;
+    color: black;
+    /*text-align: justify;*/
+    /*width: 555px;*/
+    /*height: 201px;*/
+}
+
+
 /*
  *  Added
  */
