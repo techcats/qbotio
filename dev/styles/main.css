@@ -93,6 +93,7 @@ header a:hover, main a:hover, footer a:hover {
 
 .input-group{
     padding-top: 50px;
+    color: black;
 }
 
 .boxed{
@@ -100,6 +101,7 @@ header a:hover, main a:hover, footer a:hover {
     width: 555px;
     border: 25px #454D55;
     border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
 }
 
 .query-results{
@@ -107,9 +109,6 @@ header a:hover, main a:hover, footer a:hover {
     font-size: 16px;
     line-height: 2;
     color: black;
-    /*text-align: justify;*/
-    /*width: 555px;*/
-    /*height: 201px;*/
 }
 
 
