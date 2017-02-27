@@ -93,12 +93,18 @@ header a:hover, main a:hover, footer a:hover {
 
 .query-results{
   /* Rectangle 2: */
-background: #454D55;
+/*background: #454D55;*/
 /* A red–black tree is: */
 font-family: DroidSansMono;
-font-size: 28px;
-color: #727272;
-line-height: 40px;
+font-size: 20px;
+/*color: #727272;*/
+color: white;
+/*line-height: 40px;*/
+text-align: justify;
+padding-top: 100px;
+width: 520px;
+height: 201px;
+/*border: 1px solid black;*/
 }
 
 .input-group{
