@@ -105,10 +105,12 @@ header a:hover, main a:hover, footer a:hover {
 }
 
 .query-results{
-    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-family: 'Helvetica Neue',Helvetica,sans-serif;
     font-size: 16px;
-    line-height: 2;
+    line-height: 1.5;
     color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 
