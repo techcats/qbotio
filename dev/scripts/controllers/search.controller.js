@@ -4,4 +4,12 @@ app.controller('SearchController', ['globals', '$scope', '$http', function (glob
             $scope.results = response.data;
         });
     };
+
+    $scope.getQuestions = function(query) {
+        return $http.get(globals.BASE_URL + 'suggest/?q=' + query).then(function (response) {
+            return response.data.map(function(item) {
+                return item.value
+            });
+        });
+    }
 }]);

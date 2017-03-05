@@ -23,5 +23,8 @@
     "email": "",
     "url": "https://github.com/https://github.com/techcats/q-bot-io"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "angular-ui-bootstrap": "^2.5.0"
+  }
 }
