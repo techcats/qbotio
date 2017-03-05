@@ -6,9 +6,10 @@ deployment:
   production:
     branch: dev
     commands:
-      - npm install
       - bower install
       - gulp
+      - git config user.email $GIT_USER_EMAIL
+      - git config user.name $GIT_USER_NAME
       - gulp deploy
 test:
   override:
