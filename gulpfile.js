@@ -33,6 +33,10 @@ gulp.task('fonts', ['clean'], function() {
         .pipe(gulp.dest('dist/fonts/'));
 });
 
+gulp.task('assets', ['clean'], function () {
+    return gulp.src(['dev/assets/**/*']).pipe(gulp.dest('dist/assets/'));
+});
+
 gulp.task('reload', function () {
   return gulp.src('dev/**/**.*')
     .pipe(connect.reload());
@@ -74,4 +78,4 @@ gulp.task('deploy', function() {
 
 gulp.task('serve-dev', ['connect-dev', 'watch-dev']);
 gulp.task('serve-prod', ['connect-prod', 'watch-prod'])
-gulp.task('default', ['build', 'fonts']);
+gulp.task('default', ['build', 'fonts', 'assets']);

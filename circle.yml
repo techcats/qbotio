@@ -1,0 +1,13 @@
+general:
+  branches:
+    only:
+      - dev
+deployment:
+  production:
+    branch: dev
+  commands:
+    - gulp
+    - gulp deploy
+test:
+  override:
+    - echo "test"
