@@ -8,8 +8,8 @@ deployment:
     commands:
       - bower install
       - gulp
-      - git config user.email $GIT_USER_EMAIL
-      - git config user.name $GIT_USER_NAME
+      - git config --global ser.email circleci@circleci
+      - git config --global user.name CircleCI
       - gulp deploy
 test:
   override:
