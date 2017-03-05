@@ -1,14 +1,14 @@
 general:
   branches:
-    only:
-      - dev
+    ignore:
+      - master
 deployment:
   production:
     branch: dev
     commands:
       - bower install
       - gulp
-      - git config --global ser.email circleci@circleci
+      - git config --global user.email circleci@circleci
       - git config --global user.name CircleCI
       - gulp deploy
 test:

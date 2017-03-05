@@ -69,7 +69,7 @@ gulp.task('watch-prod', function () {
 });
 
 gulp.task('deploy', function() {
-  return gulp.src(['./dist/**/*', './dev/CNAME', './dev/README.md'])
+  return gulp.src(['./dist/**/*', './dev/CNAME', './dev/README.md', './circle.yml'])
     .pipe(ghPages({
         remoteUrl: 'https://github.com/techcats/qbotio.github.io.git',
         branch: 'master'
