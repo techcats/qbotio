@@ -5,9 +5,9 @@ general:
 deployment:
   production:
     branch: dev
-  commands:
-    - gulp
-    - gulp deploy
+    commands:
+      - gulp
+      - gulp deploy
 test:
   override:
     - echo "test"
