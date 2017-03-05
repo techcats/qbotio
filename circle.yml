@@ -6,6 +6,8 @@ deployment:
   production:
     branch: dev
     commands:
+      - npm install
+      - bower install
       - gulp
       - gulp deploy
 test:
