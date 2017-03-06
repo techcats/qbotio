@@ -12,7 +12,7 @@ app.controller('SearchController', function (globals, $scope, $http, $location) 
         if ($scope.query) {
             $location.search({'q': $scope.query});
         } else {
-            $location.search({});
+            $location.path('/').search({});
         }
     };
 
