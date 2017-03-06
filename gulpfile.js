@@ -30,16 +30,16 @@ gulp.task('build', ['clean'], function (cb) {
 });
 
 gulp.task('fonts', ['clean'], function() {
-    return gulp.src(['dev/bower_components/font-awesome/fonts/fontawesome-webfont.*'], {read: false})
+    return gulp.src(['dev/bower_components/font-awesome/fonts/fontawesome-webfont.*'])
         .pipe(gulp.dest('dist/fonts/'));
 });
 
 gulp.task('assets', ['clean'], function () {
-    return gulp.src(['dev/assets/**/*'], {read: false}).pipe(gulp.dest('dist/assets/'));
+    return gulp.src(['dev/assets/**/*']).pipe(gulp.dest('dist/assets/'));
 });
 
 gulp.task('reload', function () {
-  return gulp.src('dev/**/**.*', {read: false})
+  return gulp.src('dev/**/**.*')
     .pipe(connect.reload());
 });
 
