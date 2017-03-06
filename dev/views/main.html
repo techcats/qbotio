@@ -2,34 +2,30 @@
     <div class="row">
         <div class="col-lg-3 col-md-3"></div>
         <div class="col-lg-6 col-md-6">
-            <!-- <label for="search_input">Enter a Computer Science Interview Question below</label> -->
             <div>
               <img class="animate" style="margin: auto; display: block; max-width: 70%; height: auto;" src="assets/qbotio-logo.png" alt="logo" />
             </div>
-
             <div class="input-group">
                 <input id="search_input" ng-model="query" type="text" ng-keydown="$event.which === 13 && getResults()" class="form-control" placeholder="Enter a Computer Science Interview Question" 
-                    uib-typeahead="question for question in getQuestions($viewValue)"
+                    uib-typeahead="question.value for question in getQuestions($viewValue)"
                     style="font-family: Helvetica Neue; color: black; font-size: 16px; box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);">
                 <span class="input-group-btn" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);">
-                    <button class="btn btn-warning" ng-click="getResults()" background-color="#FFAB40" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <button class="btn btn-warning" ng-click="getResults()" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </span>
             </div>
-            <!-- <div class="query-results">
-            </div> -->
-
-
         </div>
         <div class="col-lg-3 col-md-3"></div>
     </div>
 </div>
-<div class="container-fluid">
-    <!-- <div ng-repeat="result in results"> -->
-    <div class="border" style="padding-top: 80px;">
-      <div class="boxed" style="margin: auto; display: block; max-width: 70%; height: auto;">
-        <div class="query-results" ng-show="results.length" style="margin: auto; display: block; max-width: 95%; height: auto; text-align: justify;">
-          {{results[0].value}}
+<div class="container-fluid" ng-show="results.length" style="padding-top: 80px;">
+    <div class="row">
+        <div class="boxed" style="margin: auto; display: block; max-width: 70%; height: auto;">
+            <div class="query-results" style="margin: auto; display: block; max-width: 95%; height: auto; text-align: justify;">
+            {{results[0].value}}
+            </div>
         </div>
-      </div>
+    </div>
+    <div class="row" style="padding-top: 25px;">
+        <button type="button" class="center-block btn btn-warning btn-md active" style="font-family: 'Helvetica Neue',Helvetica,sans-serif; color: black; box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);" role="button">More Results</button>
     </div>
 </div>
