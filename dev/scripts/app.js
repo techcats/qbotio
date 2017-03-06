@@ -10,8 +10,9 @@ var app = angular.module('QBotIO', ['ngAnimate','ngCookies','ngResource','ngRout
             templateUrl: '/views/main.html',
             controller: 'SearchController'
         })
-        .when('/about', {
-            templateUrl: '/views/about.html'
+        .when('/set', {
+            templateUrl: '/views/results.html',
+            controller: 'SearchController'
         });
     $locationProvider.html5Mode(true);
 });

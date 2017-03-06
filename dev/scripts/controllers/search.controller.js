@@ -9,12 +9,20 @@ app.controller('SearchController', function (globals, $scope, $http, $location) 
     }
 
     $scope.getResults = function() {
-        $location.search({'q': $scope.query});
+        if ($scope.query) {
+            $location.search({'q': $scope.query});
+        } else {
+            $location.search({});
+        }
+    };
+
+    $scope.showMoreResults = function () {
+        $location.path('/set').search({'q': $scope.query});
     };
 
     $scope.getQuestions = function(query) {
         return $http.get(globals.BASE_URL + 'suggest/?q=' + query).then(function (response) {
             return response.data;
         });
-    }
+    };
 });

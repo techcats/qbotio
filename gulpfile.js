@@ -46,7 +46,8 @@ gulp.task('connect-dev', function (done) {
   connect.server({
     root: 'dev',
     port: 8080,
-    livereload: true
+    livereload: true,
+    fallback: 'dev/index.html'
   });
   opn('http://localhost:8080', done);
 });
@@ -55,7 +56,8 @@ gulp.task('connect-prod', function (done) {
   connect.server({
     root: 'dist',
     port: 8081,
-    livereload: true
+    livereload: true,
+    fallback: 'dist/index.html'
   });
   opn('http://localhost:8081', done);
 });
