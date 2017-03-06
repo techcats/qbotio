@@ -72,7 +72,7 @@ gulp.task('watch-prod', function () {
 });
 
 gulp.task('deploy', function() {
-  return gulp.src(['./dist/**/*', './gh_pages/**/*', './circle.yml'], {read: false})
+  return gulp.src(['./dist/**/*', './gh_pages/**/*', './circle.yml'])
     .pipe(gulpIf('index.html', inject(gulp.src(['./gh_pages/redirect.html']), {
       starttag: '<!-- inject:head:redirect.html -->',
       transform: function (filepath, file) {
