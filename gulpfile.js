@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     preprocess = require('gulp-preprocess'),
     useref = require('gulp-useref'),
     gulpIf = require('gulp-if'),
+    inject = require('gulp-inject'),
     uglify = require('gulp-uglify'),
     htmlmin = require('gulp-htmlmin'),
     minifyCss = require('gulp-cssnano'),
@@ -29,16 +30,16 @@ gulp.task('build', ['clean'], function (cb) {
 });
 
 gulp.task('fonts', ['clean'], function() {
-    return gulp.src(['dev/bower_components/font-awesome/fonts/fontawesome-webfont.*'])
+    return gulp.src(['dev/bower_components/font-awesome/fonts/fontawesome-webfont.*'], {read: false})
         .pipe(gulp.dest('dist/fonts/'));
 });
 
 gulp.task('assets', ['clean'], function () {
-    return gulp.src(['dev/assets/**/*']).pipe(gulp.dest('dist/assets/'));
+    return gulp.src(['dev/assets/**/*'], {read: false}).pipe(gulp.dest('dist/assets/'));
 });
 
 gulp.task('reload', function () {
-  return gulp.src('dev/**/**.*')
+  return gulp.src('dev/**/**.*', {read: false})
     .pipe(connect.reload());
 });
 
@@ -71,7 +72,13 @@ gulp.task('watch-prod', function () {
 });
 
 gulp.task('deploy', function() {
-  return gulp.src(['./dist/**/*', './dev/CNAME', './dev/README.md', './circle.yml'])
+  return gulp.src(['./dist/**/*', './gh_pages/**/*', './circle.yml'], {read: false})
+    .pipe(gulpIf('index.html', inject(gulp.src(['./gh_pages/redirect.html']), {
+      starttag: '<!-- inject:head:redirect.html -->',
+      transform: function (filepath, file) {
+        return file.contents.toString('utf8');
+      }
+    })))
     .pipe(ghPages({
         remoteUrl: 'https://github.com/techcats/qbotio.github.io.git',
         branch: 'master'
