@@ -10,7 +10,7 @@ app.controller('SearchController', function (globals, $scope, $http, $location) 
 
     $scope.getResults = function() {
         if ($scope.query) {
-            $location.search({'q': $scope.query});
+            $location.path('/').search({'q': $scope.query});
         } else {
             $location.path('/').search({});
         }
