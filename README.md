@@ -2,6 +2,11 @@
 
 An IR Closed-Domain Answering System that generates relevant and accurate answers to Computer Science Interview questions.
 
-## Development
+## Contributing
 
-See https://github.com/techcats/qbotio/tree/dev
+```bash
+$ git clone https://github.com/techcats/qbotio.github.io.git
+$ git checkout dev
+```
+
+See development guide: https://github.com/techcats/qbotio.github.io/tree/dev
